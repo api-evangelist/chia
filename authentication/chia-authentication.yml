@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chia.net/rpc/
+docs: https://docs.chia.net/rpc/
+summary:
+  types: [mutualTLS]
+  transport: HTTPS (POST JSON) or WebSocket, localhost per-service ports
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+  - name: mutualTLS
+    type: mutualTLS
+    description: >-
+      Every Chia JSON-RPC service (full node, wallet, farmer, harvester,
+      DataLayer, DID, NFT, offers, DAO, VC, simulator, daemon) authenticates
+      callers with a private/self node TLS client certificate + key generated
+      into the Chia SSL directory (~/.chia/mainnet/config/ssl/). The client must
+      present the matching private_crt/private_key pair; there are no API keys,
+      bearer tokens, or OAuth. Endpoints are self-hosted and default to
+      loopback, so access control is the local node's certificate material.
+    sources: [docs.chia.net/rpc/]
+notes: >-
+  DataLayer additionally supports an HTTP/S data-propagation server; RPC control
+  planes remain mutual-TLS. Derived-from-OpenAPI is not possible (Chia publishes
+  no OpenAPI); this profile is captured from the published RPC reference.
