@@ -1,0 +1,51 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chia.net/rpc/
+docs: https://docs.chia.net/rpc/
+transport:
+  style: JSON-RPC over HTTPS (also WebSocket via the daemon)
+  http_method: POST
+  content_type: application/json
+  tls: mutual-TLS (client certificate required)
+  default_ports:
+    full_node: 8555
+    wallet: 9256
+    farmer: 8559
+    harvester: 8560
+    daemon: 55400
+    data_layer: 8562
+authentication:
+  style: mutual-TLS client certificate
+  reference: authentication/chia-authentication.yml
+request_response:
+  request: All endpoints are POST with a JSON body of named parameters.
+  response_envelope:
+    shape: JSON object always carrying a boolean `success` field.
+    success_field: success
+    error_field: error
+    example: '{ "success": true, ... }'
+  notes: >-
+    On failure the response is `{"success": false, "error": "<message>"}`; there
+    is no RFC 7807 / RFC 9457 problem+json envelope.
+idempotency:
+  supported: false
+  notes: >-
+    Chia RPC does not document an idempotency-key mechanism; write operations
+    (e.g. wallet spends) are naturally idempotent only via on-chain coin
+    selection, not an API-level key. No Idempotency pointer is emitted.
+pagination:
+  style: >-
+    Per-endpoint; several list endpoints (e.g. get_transactions) accept `start`
+    and `end` offset parameters rather than a global cursor convention.
+versioning:
+  scheme: semver of the reference client (chia-blockchain); RPC surface tracks
+    the client release.
+  reference: changelog/chia-changelog.yml
+events:
+  websocket: >-
+    The daemon exposes a WebSocket on port 55400 that streams service state and
+    wallet events; this is a local event stream, not a hosted webhook surface.
+cross_links:
+  authentication: authentication/chia-authentication.yml
+  lifecycle: lifecycle/chia-lifecycle.yml
+  changelog: changelog/chia-changelog.yml

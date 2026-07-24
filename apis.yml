@@ -1,7 +1,17 @@
 aid: chia
 name: Chia
-description: Chia is a company surfaced as a portfolio company of a16z, greylock and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Chia Network is the company behind the Chia blockchain, a decentralized
+  layer-1 network whose native coin is XCH. Chia replaces energy-intensive Proof
+  of Work with Nakamoto-consensus Proof of Space and Time, letting participants
+  "farm" with standard disk hardware. The open-source Python reference client
+  runs a full node, farmer, harvester, timelord and wallet and exposes a local
+  JSON-RPC API (secured with mutual TLS) across full-node, wallet, farmer,
+  harvester, DataLayer, DID, NFT, offers, DAO, VC and simulator services, plus
+  the `chia` command-line client. On-chain smart transactions are authored in
+  Chialisp / CLVM, and the network supports CATs (tokens), NFTs, DIDs, offers,
+  DataLayer and DAOs. Chia was surfaced as a portfolio company of a16z and
+  Greylock and enriched from its public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/chia/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +20,50 @@ x-backed-by:
 - greylock
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.chia.net/wp-content/uploads/2022/09/chia-logo.svg
 tags:
 - Company
-apis: []
+- Blockchain
+- Cryptocurrency
+- Web3
+- Decentralized
+- JSON-RPC
+- Developer Tools
+- Open Source
+apis:
+- name: Chia JSON-RPC API
+  description: >-
+    Local JSON-RPC servers exposed by the Chia reference client for the full
+    node, wallet, farmer, harvester, DataLayer, DID, NFT, offers, DAO, VC and
+    simulator services. All calls are POST JSON over HTTPS (or WebSocket via the
+    daemon) secured with mutual TLS; responses carry a boolean `success` field.
+  humanURL: https://docs.chia.net/rpc/
+  baseURL: https://localhost:8555/
+  tags:
+  - Blockchain
+  - JSON-RPC
+  properties:
+  - type: Documentation
+    url: https://docs.chia.net/rpc/
+  - type: APIReference
+    url: https://docs.chia.net/reference-client/rpc-reference/full-node-rpc/
+  - type: Authentication
+    url: authentication/chia-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +72,46 @@ maintainers:
 common:
 - type: Website
   url: https://www.chia.net/
+- type: DeveloperPortal
+  url: https://docs.chia.net/
+- type: Documentation
+  url: https://docs.chia.net/
+- type: APIReference
+  url: https://docs.chia.net/rpc/
+- type: GettingStarted
+  url: https://docs.chia.net/guides/crash-course/introduction
+- type: Blog
+  url: https://www.chia.net/blog/
+- type: GitHubOrganization
+  url: https://github.com/Chia-Network
+- type: TermsOfService
+  url: https://www.chia.net/terms/
+- type: PrivacyPolicy
+  url: https://www.chia.net/privacy/
+- type: Packages
+  url: packages/chia-packages.yml
+- type: SDKs
+  url: packages/chia-packages.yml
+- type: CLI
+  url: cli/chia-cli.yml
+- type: Sandbox
+  url: sandbox/chia-sandbox.yml
+- type: Authentication
+  url: authentication/chia-authentication.yml
+- type: Conventions
+  url: conventions/chia-conventions.yml
+- type: Lifecycle
+  url: lifecycle/chia-lifecycle.yml
+- type: ChangeLog
+  url: changelog/chia-changelog.yml
+- type: WellKnown
+  url: well-known/chia-well-known.yml
+- type: DomainSecurity
+  url: security/chia-domain-security.yml
+- type: LLMsTxt
+  url: llms/chia-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

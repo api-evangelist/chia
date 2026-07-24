@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/Chia-Network/chia-blockchain/releases
+scheme: semver
+current_version: 2.7.3
+changelog_url: https://github.com/Chia-Network/chia-blockchain/releases
+format: GitHub Releases (Keep a Changelog style CHANGELOG.md in-repo)
+entries:
+  - version: 2.7.3
+    date: '2026-07-16'
+    breaking: false
+    highlights:
+      - Reference client release published to PyPI as chia-blockchain 2.7.3.
+    note: >-
+      Per-release notes (features / fixes / breaking changes) are enumerated on
+      the GitHub Releases page and CHANGELOG.md; only the current version is
+      captured here as the recent window. No release content is fabricated.

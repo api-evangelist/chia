@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/Chia-Network/chia-blockchain/releases
+versioning:
+  scheme: semver
+  current: 2.7.3
+  docs: https://github.com/Chia-Network/chia-blockchain/releases
+  note: >-
+    The reference client (chia-blockchain) is released on GitHub with semantic
+    version tags; the JSON-RPC surface tracks the client release. PyPI mirrors
+    each release (chia-blockchain 2.7.3, 2026-07-16).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal API deprecation policy or RFC 8594 Sunset/Deprecation header
+    support is published; the RPC is a self-hosted node interface. No
+    Deprecation pointer is emitted.
+sla:
+  url: null
+  note: Decentralized network; no hosted-service SLA.
+status_page: null
+status_page_note: >-
+  Chia is a decentralized network with no hosted control plane, so there is no
+  status page. No StatusPage pointer is emitted.
+deprecated_operations: []

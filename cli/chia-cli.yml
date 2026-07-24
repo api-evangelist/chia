@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chia.net/reference-client/cli-reference/cli/
+docs: https://docs.chia.net/reference-client/cli-reference/cli/
+cli:
+  name: chia
+  description: >-
+    First-party command-line client for the Chia reference node. Ships inside
+    the chia-blockchain distribution (packages/chia-packages.yml) and controls
+    the full node, wallet, farmer, harvester and DataLayer services, and can
+    invoke any RPC.
+  install:
+    - method: pip
+      command: pip install chia-blockchain
+    - method: installer
+      note: Bundled binary inside the Chia GUI app (macOS/Windows/Linux packages).
+  command_groups:
+    - name: wallet
+      summary: Manage keys' balances, send XCH/CATs, NFTs, DIDs and offers.
+    - name: farm
+      summary: Farming operations and harvester coordination.
+    - name: keys
+      summary: Generate, show and derive cryptographic keys / mnemonics.
+    - name: plots
+      summary: Create, check and manage plot files.
+    - name: plotnft
+      summary: Manage pooling / plot NFTs.
+    - name: plotters
+      summary: Configure advanced plotter backends.
+    - name: data
+      summary: Operate the DataLayer service.
+    - name: db
+      summary: Upgrade, backup and validate the blockchain database.
+    - name: dev
+      summary: Developer utilities including the simulator and mempool tools.
+    - name: configure
+      summary: Modify node configuration settings.
+    - name: rpc
+      summary: Execute raw RPC calls against any service.
+    - name: start
+      summary: Launch one or more services.
+    - name: stop
+      summary: Terminate services.
+    - name: show
+      summary: Display node / blockchain status.
+  help: Append -h to any command for detailed help.

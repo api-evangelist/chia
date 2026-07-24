@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: PyPI + crates.io registry lookups; https://github.com/Chia-Network
+packages:
+  - language: python
+    registry: pypi
+    name: chia-blockchain
+    url: https://pypi.org/project/chia-blockchain/
+    install: pip install chia-blockchain
+    version: 2.7.3
+    official: true
+    description: Chia blockchain full node, farmer, timelord, and wallet reference client (includes the JSON RPC servers and the chia CLI).
+    repository: https://github.com/Chia-Network/chia-blockchain
+  - language: python
+    registry: pypi
+    name: chia-rs
+    url: https://pypi.org/project/chia_rs/
+    install: pip install chia-rs
+    version: 0.46.0
+    official: true
+    description: Python wheel exposing the Rust consensus code (chia_rs) used by the reference client.
+    repository: https://github.com/Chia-Network/chia_rs
+  - language: rust
+    registry: crates.io
+    name: chia_rs
+    url: https://crates.io/crates/chia_rs
+    install: cargo add chia_rs
+    version: 0.46.0
+    official: true
+    description: Code useful for implementing Chia consensus.
+    repository: https://github.com/Chia-Network/chia_rs
+  - language: rust
+    registry: crates.io
+    name: clvm_rs
+    url: https://crates.io/crates/clvm_rs
+    install: cargo add clvm_rs
+    version: 0.1.17
+    official: true
+    description: Implementation of CLVM (Chialisp VM) for Chia Network's cryptocurrency.
+    repository: https://github.com/Chia-Network/clvm_rs
+notes: >-
+  The npm `chia-blockchain` package is a placeholder that redirects to the native
+  installer and is not a JavaScript client SDK, so it is intentionally omitted.
+  The `chia` command-line client ships inside the chia-blockchain distribution
+  (see cli/chia-cli.yml).
